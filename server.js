@@ -1,9 +1,12 @@
+const cors = require('cors'); // Tambahan baru
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const axios = require('axios'); // Add axios for HTTP requests
 const workouts = require('./workouts');
 const app = express();
+app.use(cors()); // Izinkan semua origin
+
 const PORT = process.env.PORT || 8080;
 const PYTHON_API_URL = 'https://backendpy-production.up.railway.app/'; // Python server address
 
